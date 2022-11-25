@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Javascript User-defined functions</title>
+    </head>
+    <body>
+        <h1 class="hide title">Pacman Game</h1>
+        
+        <button id="btn-play" onclick="playBegin()">Play Game</button>
+        
+        <audio id="begin"> <!--Source the audio file. -->
+            <source src="./Audio/begin.wav" type="audio/wav">
+        </audio>
+        <audio id="eat"> <!--Source the audio file. -->
+            <source src="./Audio/eat.wav" type="audio/wav">
+        </audio>
+        <audio id="victory"> <!--Source the audio file. -->
+            <source src="./Audio/victory.mp3" type="audio/mp3">
+        </audio>
+        <div class="container hide">
+            <div id="layout"></div>
+            <div id="pacman"></div>
+        </div>
+        
+        <div class="finish">
+            <h1>Game Finish! Congrats!<h1>
+              <h2>Score: <span id="final-score"></span></h2>
+            <button id="replay" onclick="window.location.reload();">Replay</button>
+        </div>
+        <h1 class="score hide">Score : <span id="score">0</span></h1>
+        <script src="app.js"></script>   
+    </body>
+</html>
