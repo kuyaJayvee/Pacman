@@ -1,7 +1,24 @@
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+function ctrlShiftKey(e, keyCode) {
+  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+}
+
+document.onkeydown = (e) => {
+  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+  if (
+    event.keyCode === 123 ||
+    ctrlShiftKey(e, 'I') ||
+    ctrlShiftKey(e, 'J') ||
+    ctrlShiftKey(e, 'C') ||
+    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+  )
+    return false;
+}
+
 var beginSound = document.getElementById("begin");
 let eatSound = document.getElementById("eat");
 let victorySound = document.getElementById("victory");
-
 
 let board=[
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -68,8 +85,8 @@ function playBegin() {
         document.body.style.backgroundColor = "blue"
 }
 setTimeout(()=>{
+    
  document.onkeydown = function(e){    
-     
      if(e.key =='ArrowRight' && board[pacman.y][pacman.x+1] !== 1){
         pacman.x++;
      document.getElementById('pacman').style.transform = "rotate(2deg)";
